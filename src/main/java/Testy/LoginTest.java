@@ -15,9 +15,7 @@ public class LoginTest extends AbstractTest {
 
         mainPage.wypelnijFormularzLogowania("tester.testowy@onet.eu","JakDojade1");
 
-      //  Assert.assertEquals(mainPage.textToConfirmLogin(),"Zostałeś zalogowany!");
         Assert.assertTrue(mainPage.czyZalogowany());
-
     }
 
 
