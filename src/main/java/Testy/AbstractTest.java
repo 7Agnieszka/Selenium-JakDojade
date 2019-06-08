@@ -21,22 +21,21 @@ public abstract class AbstractTest {
     @BeforeSuite
     public void setUpSuite() {
 
-        //inicjalizacja customscrenshor
+
         customScreenShot = new CustomScreenShot();
 
 
-        // Wskazanie zewnętrznego pliku drivera dla przeglądarki CHROME
         System.setProperty(
                 "webdriver.chrome.driver",
                 new CustomPath().getResourcePath("chromedriver.exe")
         );
-        //Stworzenie i zainicjalizowanie obiektu DRIVER przeglądarką CHROME
+
         driver = new ChromeDriver();
-        // Ustawienie globalnego timeouta na 5 sekund
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        // Ustawienie zmaksymalizowanego okna
+
         driver.manage().window().maximize();
-        // przejście na wskazaną stronę
+
         driver.get("http://jakdojade.pl");
     }
 
@@ -51,7 +50,7 @@ public abstract class AbstractTest {
 
     @AfterSuite
     public void tearDownSuite() {
-        //Zamknięcie przeglądarki
+
         driver.quit();
     }
 }

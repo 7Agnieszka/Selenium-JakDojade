@@ -9,8 +9,6 @@ public class PreMainPage extends AbstractPage {
 
     @FindBy(css = ".cmp-button_button.cmp-intro_acceptAll")
     private WebElement przyciskRodo;
-    //@FindBy(className = "cmp-button_button")
-    //private WebElement przyciskRodo;
 
     @FindBy(css = ".cn-city-list-button.ng-scope")
     private WebElement przyciskWyboruMiasta;
@@ -35,19 +33,13 @@ public class PreMainPage extends AbstractPage {
     }
 
 
-    public MainPage wybierzMiasto(String miasto) {
+    public MainPage wybierzKrakow() {
         clickElement(przyciskWyboruMiasta);
-        //clickElement(poleWpisywaniaMiasta);
         fillField(poleWpisywaniaMiasta, "Kra");
         clickElement(wybierzKrakow);
 
         return new MainPage(driver);
     }
-
-
-
-
-
 
 
 }

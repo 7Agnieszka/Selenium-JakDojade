@@ -3,11 +3,10 @@ package Testy;
 
 import Strony.MainPage;
 import org.testng.Assert;
-
 import org.testng.annotations.Test;
 
 
-public class LogOutTest extends AbstractTest  {
+public class LogOutTest extends AbstractTest {
 
 
     @Test
@@ -17,10 +16,8 @@ public class LogOutTest extends AbstractTest  {
         mainPage.wyloguj();
 
 
-//        Assert.assertEquals(mainPage.textToConfirmLogin(),"Wylogowałeś się!");
         Assert.assertTrue(mainPage.czyWylogowany());
     }
-
 
 
 }

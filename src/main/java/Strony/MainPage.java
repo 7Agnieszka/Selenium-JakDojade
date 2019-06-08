@@ -1,11 +1,7 @@
 package Strony;
 
-import Testy.ZmienJezykTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,15 +17,9 @@ public class MainPage extends AbstractPage {
     @FindBy(css = ".cn-header-login")
     private WebElement loginButton;
 
-    //@FindBy(xpath = "/html/body/div[3]/main/div/div[1]/header/div/div[2]/div[3]")
-    //private WebElement logOutButton1;
-
     @FindBy(css = ".cn-header-login")
     private WebElement logOutButton1;
 
-
-    //@FindBy(xpath = "/html/body/div[4]/div[2]/div/mat-dialog-container/app-auth-panel-dialog/app-auth-panel/div/div/app-user-profile-panel/div/div[2]/button[3]")
-    //private WebElement logOutButton2;
     @FindBy(css = "button.edit-profile__content__btn:nth-child(3)")
     private WebElement logOutButton2;
 
@@ -39,9 +29,7 @@ public class MainPage extends AbstractPage {
     @FindBy(className = "cn-toasts-container")
     private WebElement loginSubmitText;
 
-//    @FindBy(css = "#cn-planner > div.cn-planner-main-form > div > div.ng-isolate-scope > div.cn-direction-a.ng-isolate-scope > div.cn-direction-form > form > strong > input")
-  //  private WebElement poleTrasaZ;
- @FindBy(xpath = "//*[@id=\"cn-planner\"]/div[2]/div/div[1]/div[1]/div[2]/form/strong/input")
+    @FindBy(xpath = "//*[@id=\"cn-planner\"]/div[2]/div/div[1]/div[1]/div[2]/form/strong/input")
     private WebElement poleTrasaZ;
 
     @FindBy(css = ".cdk-overlay-backdrop .cdk-overlay-dark-backdrop .cdk-overlay-backdrop-showing")
@@ -58,8 +46,6 @@ public class MainPage extends AbstractPage {
 
     @FindBy(className = "cn-menu-search")
     private WebElement przyciskTrasy;
-
-
 
 
     public MainPage(WebDriver driver) {
@@ -93,60 +79,44 @@ public class MainPage extends AbstractPage {
         return this;
     }
 
-    public String textToConfirmLogin() {
 
-
-        try {
-
-            return loginSubmitText.getText();
-        }
-        catch (Exception e) {
-
-
-            return loginSubmitText.getText();
-
-        }
-    }
-
-    public boolean czyZalogowany(){
+    public boolean czyZalogowany() {
 
         return logOutButton1.isDisplayed();
     }
 
-    public boolean czyWylogowany(){
+    public boolean czyWylogowany() {
 
         return loginButton.isDisplayed();
     }
 
 
-
-
     public ZmianaJezykaPage przejdzDoZmianyJezyka() {
 
-       clickElement(przyciskUstawienia);
+        clickElement(przyciskUstawienia);
 
-       return new ZmianaJezykaPage(driver);
+        return new ZmianaJezykaPage(driver);
     }
 
-    public String tekstPrzyciskuLogowania(){
+    public String tekstPrzyciskuLogowania() {
 
-    return loginButton.getText();
+        return loginButton.getText();
 
     }
 
-    public MainPage wyswietlSchowajPrzystanki(){
+    public MainPage wyswietlSchowajPrzystanki() {
 
         clickElement(przyciskPrzystanki);
 
         return this;
     }
 
-    public MainPage wybierzRozklady(){
+    public MainPage wybierzRozklady() {
         clickElement(przyciskRozklady);
         return this;
     }
 
-    public MainPage wybierzTrase(){
+    public MainPage wybierzTrase() {
         clickElement(przyciskTrasy);
         return this;
     }

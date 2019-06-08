@@ -13,16 +13,13 @@ public class LoginTest extends AbstractTest {
     public void successLoginTest() {
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.wypelnijFormularzLogowania("tester.testowy@onet.eu","JakDojade1");
+        mainPage.wypelnijFormularzLogowania("tester.testowy@onet.eu", "JakDojade1");
 
         mainPage.potwierdzLogowanie();
 
-        Assert.assertEquals(mainPage.textToConfirmLogin(),"Zostałeś Zalogowany!");
+        Assert.assertTrue(mainPage.czyZalogowany());
 
     }
-
-
-
 
 
 }
