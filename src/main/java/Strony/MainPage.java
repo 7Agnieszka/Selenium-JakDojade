@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends AbstractPage {
@@ -51,6 +53,12 @@ public class MainPage extends AbstractPage {
     @FindBy(id = "map-stop-button")
     private WebElement przyciskPrzystanki;
 
+    @FindBy(className = "cn-menu-schedules")
+    private WebElement przyciskRozklady;
+
+    @FindBy(className = "cn-menu-search")
+    private WebElement przyciskTrasy;
+
 
 
 
@@ -75,8 +83,11 @@ public class MainPage extends AbstractPage {
 
     public MainPage wyloguj() {
 
+        Actions act = new Actions(driver);
+        act.moveToElement(logOutButton1);
+
         clickElement(logOutButton1);
-        driver.findElement(By.xpath("")).getLocation();
+
 
         clickElement(logOutButton2);
         return this;
@@ -107,20 +118,7 @@ public class MainPage extends AbstractPage {
         return loginButton.isDisplayed();
     }
 
-    public PanelWyboruTrasy wpiszPoleZ( String tekst){
 
-       //clickElement(poleTrasaZ);
-       //fillField(poleTrasaZ,tekst);
-       //poleTrasaZ.sendKeys(Keys.ENTER);
-
-      // formularzTrasy.click();
-       poleTrasaZ.click();
-       poleTrasaZ.sendKeys("Tekst");
-
-
-
-        return new PanelWyboruTrasy(driver);
-    }
 
 
     public ZmianaJezykaPage przejdzDoZmianyJezyka() {
@@ -140,6 +138,16 @@ public class MainPage extends AbstractPage {
 
         clickElement(przyciskPrzystanki);
 
+        return this;
+    }
+
+    public MainPage wybierzRozklady(){
+        clickElement(przyciskRozklady);
+        return this;
+    }
+
+    public MainPage wybierzTrase(){
+        clickElement(przyciskTrasy);
         return this;
     }
 

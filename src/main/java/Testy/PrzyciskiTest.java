@@ -7,11 +7,13 @@ import org.testng.annotations.Test;
 public class PrzyciskiTest extends AbstractTest {
 
     @Test
-    public void wyswietlPrzystankiTest(){
+    public void _wyswietlPrzystankiTest(){
 
         MainPage mainPage = new MainPage(driver);
 
         mainPage.wyswietlSchowajPrzystanki();
+
+        for(int i=0; i<=10; i++);
 
         Assert.assertEquals(mainPage.wezAdresStrony(),"https://jakdojade.pl/krakow/trasa/?stopsLayer=true");
 
@@ -24,6 +26,26 @@ public class PrzyciskiTest extends AbstractTest {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.wyswietlSchowajPrzystanki();
+
+        Assert.assertEquals(mainPage.wezAdresStrony(),"https://jakdojade.pl/krakow/trasa/");
+
+    }
+    @Test
+    public void wyswietlRozkladyTest(){
+
+        MainPage mainPage = new MainPage(driver);
+
+        mainPage.wybierzRozklady();
+
+        Assert.assertEquals(mainPage.wezAdresStrony(),"https://jakdojade.pl/krakow/rozklad-jazdy");
+
+    }
+    @Test
+    public void wyswietlTrasyTest(){
+
+        MainPage mainPage = new MainPage(driver);
+
+        mainPage.wybierzTrase();
 
         Assert.assertEquals(mainPage.wezAdresStrony(),"https://jakdojade.pl/krakow/trasa/");
 

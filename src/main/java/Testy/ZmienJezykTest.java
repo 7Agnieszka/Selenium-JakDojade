@@ -21,7 +21,7 @@ public class ZmienJezykTest extends AbstractTest {
 
 
 
-        Assert.assertEquals(  mainPage.tekstPrzyciskuLogowania(), "Sing In");
+        Assert.assertEquals(  mainPage.tekstPrzyciskuLogowania(), "Sign In");
 
     }
 

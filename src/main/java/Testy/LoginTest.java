@@ -18,7 +18,7 @@ public class LoginTest extends AbstractTest {
         mainPage.potwierdzLogowanie();
 
         Assert.assertEquals(mainPage.textToConfirmLogin(),"Zostałeś Zalogowany!");
-      //  Assert.assertTrue(mainPage.czyZalogowany());
+
     }
 
 
