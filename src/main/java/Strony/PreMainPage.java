@@ -47,9 +47,7 @@ public class PreMainPage extends AbstractPage {
 
 
 
-    public String wezAdresStrony() {
-        return driver.getCurrentUrl();
-    }
+
 
 
 }

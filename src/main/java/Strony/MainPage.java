@@ -1,6 +1,8 @@
 package Strony;
 
+import Testy.ZmienJezykTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +36,22 @@ public class MainPage extends AbstractPage {
 
     @FindBy(className = "cn-toasts-container")
     private WebElement loginSubmitText;
+
+//    @FindBy(css = "#cn-planner > div.cn-planner-main-form > div > div.ng-isolate-scope > div.cn-direction-a.ng-isolate-scope > div.cn-direction-form > form > strong > input")
+  //  private WebElement poleTrasaZ;
+ @FindBy(xpath = "//*[@id=\"cn-planner\"]/div[2]/div/div[1]/div[1]/div[2]/form/strong/input")
+    private WebElement poleTrasaZ;
+
+    @FindBy(css = ".cdk-overlay-backdrop .cdk-overlay-dark-backdrop .cdk-overlay-backdrop-showing")
+    private WebElement formularzTrasy;
+
+    @FindBy(xpath = "//*[@id=\"container\"]/div[1]/header/div/app-settings-button/div")
+    private WebElement przyciskUstawienia;
+
+    @FindBy(id = "map-stop-button")
+    private WebElement przyciskPrzystanki;
+
+
 
 
     public MainPage(WebDriver driver) {
@@ -89,5 +107,41 @@ public class MainPage extends AbstractPage {
         return loginButton.isDisplayed();
     }
 
+    public PanelWyboruTrasy wpiszPoleZ( String tekst){
+
+       //clickElement(poleTrasaZ);
+       //fillField(poleTrasaZ,tekst);
+       //poleTrasaZ.sendKeys(Keys.ENTER);
+
+      // formularzTrasy.click();
+       poleTrasaZ.click();
+       poleTrasaZ.sendKeys("Tekst");
+
+
+
+        return new PanelWyboruTrasy(driver);
+    }
+
+
+    public ZmianaJezykaPage przejdzDoZmianyJezyka() {
+
+       clickElement(przyciskUstawienia);
+
+       return new ZmianaJezykaPage(driver);
+    }
+
+    public String tekstPrzyciskuLogowania(){
+
+    return loginButton.getText();
+
+    }
+
+    public MainPage wyswietlSchowajPrzystanki(){
+
+        clickElement(przyciskPrzystanki);
+
+        return this;
+    }
 
 }
+

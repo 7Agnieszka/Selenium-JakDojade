@@ -4,7 +4,9 @@
     <test name="Regression1">
         <classes>
             <class name="Testy.WyborMiastaTest"/>
+            <class name="Testy.ZmienJezykTest"/>
             <class name="Testy.LoginTest"/>
+            <class name="Testy.PrzyciskiTest"/>
             <class name="Testy.LogOutTest"/>
           </classes>
     </test>
