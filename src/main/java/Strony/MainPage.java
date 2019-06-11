@@ -17,10 +17,14 @@ public class MainPage extends AbstractPage {
     @FindBy(css = ".cn-header-login")
     private WebElement loginButton;
 
+
     @FindBy(css = ".cn-header-login")
     private WebElement logOutButton1;
 
-    @FindBy(css = "button.edit-profile__content__btn:nth-child(3)")
+   // @FindBy(css = "button.edit-profile__content__btn:nth-child(3)")
+    //private WebElement logOutButton2;
+
+    @FindBy(css = ".edit-profile__btn__logout")
     private WebElement logOutButton2;
 
     @FindBy(xpath = "/html/body/div[5]/div[2]/div/mat-dialog-container/app-auth-panel-dialog/app-auth-panel/div/div/app-login-panel/form/button")
@@ -67,13 +71,12 @@ public class MainPage extends AbstractPage {
         return this;
     }
 
-    public MainPage wyloguj() {
-
-        Actions act = new Actions(driver);
-        act.moveToElement(logOutButton1);
+    public MainPage wyloguj() throws InterruptedException {
 
         clickElement(logOutButton1);
-
+        Actions act = new Actions(driver);
+        act.moveToElement(logOutButton2);
+        //Thread.sleep(100);
 
         clickElement(logOutButton2);
         return this;

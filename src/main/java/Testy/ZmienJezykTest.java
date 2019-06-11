@@ -9,7 +9,7 @@ public class ZmienJezykTest extends AbstractTest {
 
 
     @Test
-    public void ZmienJezykNaAngielskiTest() {
+    public void ZmienJezykNaAngielskiTest() throws InterruptedException {
 
         MainPage mainPage = new MainPage(driver);
 
@@ -17,6 +17,7 @@ public class ZmienJezykTest extends AbstractTest {
 
         zmianaJezykaPage.wybierzAngielski();
 
+        Thread.sleep(3000);
 
         Assert.assertEquals(mainPage.tekstPrzyciskuLogowania(), "Sign In");
 

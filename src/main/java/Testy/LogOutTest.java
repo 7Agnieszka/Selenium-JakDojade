@@ -10,7 +10,7 @@ public class LogOutTest extends AbstractTest {
 
 
     @Test
-    public void successLogOutTest() {
+    public void successLogOutTest() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.wyloguj();
