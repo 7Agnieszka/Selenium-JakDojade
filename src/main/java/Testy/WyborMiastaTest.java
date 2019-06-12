@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class WyborMiastaTest extends AbstractTest {
 
     @Test
-    public void WybierzKrakowZListyTest() {
+    public void WybierzKrakowZListyTest() throws InterruptedException {
 
         PreMainPage preMainPage = new PreMainPage(driver);
 

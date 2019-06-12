@@ -19,9 +19,6 @@ public class PanelWyboruTrasy extends AbstractPage {
     @FindBy(className = "cn-planner-action-button")
     private WebElement przyciskTrasy;
 
-    //@FindBy(css = ".ng-scope .ng-isolate-scope .cn-planner-route .cn-vehicle-type-icon-included")
-    //private WebElement wynikTrasy;
-
     @FindBy(css = ".cn-vehicle-type-icon-included")
     private WebElement wynikTrasy;
 
@@ -42,7 +39,6 @@ public class PanelWyboruTrasy extends AbstractPage {
     }
 
 
-
     public PanelWyboruTrasy wybierzPunktKoncowy(String przystanekKoncowy) {
 
         Actions act = new Actions(driver);
@@ -59,9 +55,9 @@ public class PanelWyboruTrasy extends AbstractPage {
         return this;
     }
 
-    public boolean trasaWyswietlona(){
+    public boolean trasaWyswietlona() {
 
-       return wynikTrasy.isDisplayed();
+        return wynikTrasy.isDisplayed();
     }
 
 

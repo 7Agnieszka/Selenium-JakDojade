@@ -17,12 +17,8 @@ public class MainPage extends AbstractPage {
     @FindBy(css = ".cn-header-login")
     private WebElement loginButton;
 
-
-    @FindBy(css = ".cn-header-login")
+    @FindBy(className = "cn-header-login")
     private WebElement logOutButton1;
-
-   // @FindBy(css = "button.edit-profile__content__btn:nth-child(3)")
-    //private WebElement logOutButton2;
 
     @FindBy(css = ".edit-profile__btn__logout")
     private WebElement logOutButton2;
@@ -47,6 +43,7 @@ public class MainPage extends AbstractPage {
 
     @FindBy(className = "cn-menu-schedules")
     private WebElement przyciskRozklady;
+
 
     @FindBy(className = "cn-menu-search")
     private WebElement przyciskTrasy;
@@ -73,10 +70,11 @@ public class MainPage extends AbstractPage {
 
     public MainPage wyloguj() throws InterruptedException {
 
+        clickElement(przyciskTrasy);
         clickElement(logOutButton1);
         Actions act = new Actions(driver);
         act.moveToElement(logOutButton2);
-        //Thread.sleep(100);
+
 
         clickElement(logOutButton2);
         return this;
