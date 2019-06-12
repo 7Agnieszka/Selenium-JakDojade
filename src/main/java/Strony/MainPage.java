@@ -48,6 +48,9 @@ public class MainPage extends AbstractPage {
     @FindBy(className = "cn-menu-search")
     private WebElement przyciskTrasy;
 
+    @FindBy(css = ".cn-toasts-container .cn-toast")
+    private WebElement komunikat;
+
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -65,8 +68,10 @@ public class MainPage extends AbstractPage {
     public MainPage potwierdzLogowanie() {
 
         clickElement(loginSubmitButton);
+        waitForClickableAndClickElement(komunikat);
         return this;
     }
+
 
     public MainPage wyloguj() throws InterruptedException {
 

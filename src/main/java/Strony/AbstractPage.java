@@ -3,6 +3,8 @@ package Strony;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
 
@@ -24,5 +26,11 @@ public abstract class AbstractPage {
 
     public String wezAdresStrony() {
         return driver.getCurrentUrl();
+    }
+
+    private static final int CZAS_OCZEKIWANIA_SEK = 15;
+
+    public void waitForClickableAndClickElement(WebElement element) {
+        new WebDriverWait(driver, CZAS_OCZEKIWANIA_SEK).until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 }

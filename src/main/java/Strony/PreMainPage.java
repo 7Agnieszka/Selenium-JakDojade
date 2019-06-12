@@ -39,15 +39,17 @@ public class PreMainPage extends AbstractPage {
 
         fillField(poleWpisywaniaMiasta, "Kra");
 
-        for (int i = 1; i <= 5; i++) {
-            try {
-                clickElement(wybierzKrakow);
-                break;
-            } catch (Exception e) {
+        waitForClickableAndClickElement(wybierzKrakow);
 
-                Thread.sleep(2000);
-            }
-        }
+        //  for (int i = 1; i <= 5; i++) {
+        //    try {
+        //      clickElement(wybierzKrakow);
+        //     break;
+        //   } catch (Exception e) {
+
+        //     Thread.sleep(2000);
+        // }
+        // }
 
         return new MainPage(driver);
     }
