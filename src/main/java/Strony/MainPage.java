@@ -73,7 +73,7 @@ public class MainPage extends AbstractPage {
     }
 
 
-    public MainPage wyloguj() throws InterruptedException {
+    public MainPage wyloguj() {
 
         clickElement(przyciskTrasy);
         clickElement(logOutButton1);

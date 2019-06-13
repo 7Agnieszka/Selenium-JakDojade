@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
 
+    private static final int CZAS_OCZEKIWANIA_SEK = 15;
     protected static WebDriver driver;
 
     public AbstractPage(WebDriver driver) {
@@ -28,9 +29,9 @@ public abstract class AbstractPage {
         return driver.getCurrentUrl();
     }
 
-    private static final int CZAS_OCZEKIWANIA_SEK = 15;
-
     public void waitForClickableAndClickElement(WebElement element) {
-        new WebDriverWait(driver, CZAS_OCZEKIWANIA_SEK).until(ExpectedConditions.elementToBeClickable(element)).click();
+        new WebDriverWait(driver, CZAS_OCZEKIWANIA_SEK)
+                .until(ExpectedConditions.elementToBeClickable(element))
+                .click();
     }
 }

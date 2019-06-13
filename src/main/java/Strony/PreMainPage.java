@@ -33,23 +33,13 @@ public class PreMainPage extends AbstractPage {
     }
 
 
-    public MainPage wybierzKrakow() throws InterruptedException {
+    public MainPage wybierzKrakow() {
 
         clickElement(przyciskWyboruMiasta);
 
         fillField(poleWpisywaniaMiasta, "Kra");
 
         waitForClickableAndClickElement(wybierzKrakow);
-
-        //  for (int i = 1; i <= 5; i++) {
-        //    try {
-        //      clickElement(wybierzKrakow);
-        //     break;
-        //   } catch (Exception e) {
-
-        //     Thread.sleep(2000);
-        // }
-        // }
 
         return new MainPage(driver);
     }

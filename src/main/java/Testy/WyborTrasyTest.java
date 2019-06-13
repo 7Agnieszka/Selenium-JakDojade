@@ -1,6 +1,5 @@
 package Testy;
 
-import Strony.MainPage;
 import Strony.PanelWyboruTrasy;
 import org.testng.Assert;
 

@@ -2,5 +2,5 @@ package utils;
 
 public class BaseProperities {
 
-public static String SCREENSHOT_PATH = "/screenshots/";
+    public static final String SCREENSHOT_PATH = "/screenshots/";
 }
